@@ -1,0 +1,30 @@
+{
+  "name": "speaking-code",
+  "version": "0.0.0",
+  "description": "Makes your code tell you what the intermediate results are when executing a script.",
+  "main": "speaking-code.js",
+  "directories": {
+    "example": "examples"
+  },
+  "dependencies": {
+    "cardinal": "~0.3.1",
+    "esprima": "~1.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node-trap ./test/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thlorenz/speaking-code.git"
+  },
+  "keywords": [
+    "debug",
+    "script",
+    "inspect"
+  ],
+  "author": "Thorsten Lorenz <thlorenz@gmx.de> (thlorenz.com)",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "315c3a35223a0bd1eaa95399dc539ee681def21c"
+}
