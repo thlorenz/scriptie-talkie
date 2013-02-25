@@ -29,11 +29,11 @@ evalChunks(chunked.chunks);
 function resolveTale(evaluated) {
   if (!evaluated) return '';
 
-  var taleStart =  '\n'
+  var taleEnd =  '\n'
     , tale = '';
 
   function addToTale(s) {
-    tale += (taleStart + s);
+    tale += (s + taleEnd);
   }
 
   if (evaluated.added.length) {
@@ -71,4 +71,17 @@ function resolveTales(chunks) {
 }
 
 var tales = resolveTales(chunked.chunks);
-console.log(tales.map(function (x) { return x.tale; }).join('') );
+
+var highlightedLines = highlight(script, { linenos: true }).split('\n')
+  , offset = 0;
+
+tales
+  .forEach(function (x) {
+    highlightedLines.splice(x.insertAfter + offset, 0, x.tale);
+    offset++;
+  });
+
+highlightedLines = highlightedLines.filter(function (x) { return x.length; });
+
+console.log(highlightedLines.join('\n'));
+
