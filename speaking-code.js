@@ -7,7 +7,7 @@ var fs         =  require('fs')
   , resolveTales = require('./lib/resolve-tales')
   ;
 
-var script = fs.readFileSync(path.join(__dirname, 'examples', 'objects.js'), 'utf-8');
+var script = fs.readFileSync(path.join(__dirname, 'examples', 'objects-simple.js'), 'utf-8');
 
 var chunked = chunkify(script);
 
