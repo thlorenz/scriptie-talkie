@@ -7,7 +7,7 @@ var fs           =  require('fs')
   , resolveTales =  require('./lib/resolve-tales')
   ;
 
-var scriptPath = path.join(__dirname, 'examples', 'async.js')
+var scriptPath = path.join(__dirname, 'examples', 'objects.js')
   , script = fs.readFileSync(scriptPath, 'utf-8');
 
 var snippets = snippetify(script);
