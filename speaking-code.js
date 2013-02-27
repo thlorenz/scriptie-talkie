@@ -7,13 +7,13 @@ var fs           =  require('fs')
   , resolveTales =  require('./lib/resolve-tales')
   ;
 
-// var script = fs.readFileSync(path.join(__dirname, 'examples', 'function-call.js'), 'utf-8');
-var script = fs.readFileSync(require.resolve('./lib/diff-values'), 'utf-8');
+var scriptPath = path.join(__dirname, 'examples', 'function-call.js')
+  , script = fs.readFileSync(scriptPath, 'utf-8');
 
 var snippets = snippetify(script);
 
 // TODO: This could also become a separate module with a starting context
-evalSnippets(snippets,require.resolve('./lib/diff-values'));
+evalSnippets(snippets, scriptPath);
 
 var tales = resolveTales(snippets);
 
