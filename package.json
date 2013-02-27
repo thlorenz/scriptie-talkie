@@ -12,7 +12,8 @@
     "difflet": "~0.2.3",
     "deep-equal": "0.0.0",
     "clone": "~0.1.5",
-    "ansicolors": "~0.2.1"
+    "ansicolors": "~0.2.1",
+    "snippetify": "~0.1.0"
   },
   "devDependencies": {},
   "scripts": {

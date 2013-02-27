@@ -1,6 +1,6 @@
-var o = { foo: {}, bar: { } };
-var foo = o.foo;
-var bar = o.bar;
+var o = { foo: {}, bar: { } }
+  , foo = o.foo
+  , bar = o.bar;
 
 foo.name = { first: 'foo', last: 'oof' };
 bar.name = { first: 'bar', last: 'oof' };

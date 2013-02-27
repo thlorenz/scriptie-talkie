@@ -1,19 +1,20 @@
 'use strict';
-var fs         =  require('fs')
-  , path       =  require('path')
-  , highlight  =  require('cardinal').highlight
-  , chunkify   =  require('./lib/chunkify')
-  , evalChunks =  require('./lib/eval-chunks')
-  , resolveTales = require('./lib/resolve-tales')
+var fs           =  require('fs')
+  , path         =  require('path')
+  , highlight    =  require('cardinal').highlight
+  , snippetify   =  require('snippetify')
+  , evalSnippets =  require('./lib/eval-snippets')
+  , resolveTales =  require('./lib/resolve-tales')
   ;
 
-var script = fs.readFileSync(path.join(__dirname, 'examples', 'objects-simple.js'), 'utf-8');
+var script = fs.readFileSync(path.join(__dirname, 'examples', 'function-call.js'), 'utf-8');
 
-var chunked = chunkify(script);
+var snippets = snippetify(script);
 
-evalChunks(chunked.chunks);
+// TODO: This could also become a separate module with a starting context
+evalSnippets(snippets);
 
-var tales = resolveTales(chunked.chunks);
+var tales = resolveTales(snippets);
 
 var highlightedLines = highlight(script, { linenos: true }).split('\n')
   , offset = 0;
