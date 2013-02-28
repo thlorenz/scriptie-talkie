@@ -7,13 +7,16 @@ var fs           =  require('fs')
   , resolveTales =  require('./lib/resolve-tales')
   ;
 
-var scriptPath = path.join(__dirname, 'examples', 'objects.js')
+var scriptPath = process.argv[2] || path.join(__dirname, 'examples', 'async.js')
   , script = fs.readFileSync(scriptPath, 'utf-8');
 
 var snippets = snippetify(script);
 
-// TODO: This could also become a separate module with a starting context
-evalSnippets(snippets, scriptPath);
+var ctx = evalSnippets(snippets, scriptPath);
+setTimeout(function () {
+  console.log('ctx timeout res', ctx.timeoutRes);
+  console.log('sandbox timeout res', ctx.timeoutRes);
+}, 200);
 
 var tales = resolveTales(snippets);
 
