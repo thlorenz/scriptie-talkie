@@ -12,23 +12,24 @@ var scriptPath = process.argv[2] || path.join(__dirname, 'examples', 'async.js')
 
 var snippets = snippetify(script);
 
-var ctx = evalSnippets(snippets, scriptPath);
-setTimeout(function () {
+/*setTimeout(function () {
   console.log('ctx timeout res', ctx.timeoutRes);
   console.log('sandbox timeout res', ctx.timeoutRes);
-}, 200);
+}, 200);*/
 
-var tales = resolveTales(snippets);
+evalSnippets(snippets, scriptPath, function (ctx) {
+  var tales = resolveTales(snippets);
 
-var highlightedLines = highlight(script, { linenos: true }).split('\n')
-  , offset = 0;
+  var highlightedLines = highlight(script, { linenos: true }).split('\n')
+    , offset = 0;
 
-tales
-  .forEach(function (x) {
-    highlightedLines.splice(x.insertAfter + offset, 0, x.tale);
-    offset++;
-  });
+  tales
+    .forEach(function (x) {
+      highlightedLines.splice(x.insertAfter + offset, 0, x.tale);
+      offset++;
+    });
 
-highlightedLines = highlightedLines.filter(function (x) { return x.length; });
+  highlightedLines = highlightedLines.filter(function (x) { return x.length; });
 
-console.log(highlightedLines.join('\n'));
+  console.log(highlightedLines.join('\n'));
+});
