@@ -7,15 +7,10 @@ var fs           =  require('fs')
   , resolveTales =  require('./lib/resolve-tales')
   ;
 
-var scriptPath = process.argv[2] || path.join(__dirname, 'examples', 'changing-var.js')
+var scriptPath = process.argv[2] || path.join(__dirname, 'examples', 'error.js')
   , script = fs.readFileSync(scriptPath, 'utf-8');
 
 var snippets = snippetify(script);
-
-/*setTimeout(function () {
-  console.log('ctx timeout res', ctx.timeoutRes);
-  console.log('sandbox timeout res', ctx.timeoutRes);
-}, 200);*/
 
 evalSnippets(snippets, scriptPath, function (ctx) {
   var tales = resolveTales(snippets);
