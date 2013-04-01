@@ -1,8 +1,8 @@
 {
-  "name": "speaking-code",
+  "name": "scriptie-talkie",
   "version": "0.0.0",
   "description": "Makes your code tell you what the intermediate results are when executing a script.",
-  "main": "speaking-code.js",
+  "main": "scriptie-talkie.js",
   "directories": {
     "example": "examples"
   },
@@ -23,7 +23,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/thlorenz/speaking-code.git"
+    "url": "git://github.com/thlorenz/scriptie-talkie.git"
   },
   "keywords": [
     "debug",
