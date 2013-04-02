@@ -2,7 +2,6 @@
 
 Makes your code tell you what the intermediate results are when executing a script.
 
-**changing-var.js**
 ```js
 var a = 3;
 
@@ -46,7 +45,10 @@ Prints the highlighted code of `script.js` with intermediate results.
  ```
 
 ```js
-var script = fs.readFileSync(scriptPath, 'utf-8');
+var talk    =  require('scriptie-talkie')
+  , fs      =  require('fs');
+  ,  script =  fs.readFileSync(scriptPath, 'utf-8');
+
 talk(script, scriptPath, { write: console.error });
 ```
 

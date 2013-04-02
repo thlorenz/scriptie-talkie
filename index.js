@@ -1,7 +1,5 @@
 'use strict';
-var fs           =  require('fs')
-  , path         =  require('path')
-  , highlight    =  require('cardinal').highlight
+var highlight    =  require('cardinal').highlight
   , snippetify   =  require('snippetify')
   , evalSnippets =  require('./lib/eval-snippets')
   , resolveTales =  require('./lib/resolve-tales')
