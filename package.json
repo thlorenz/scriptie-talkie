@@ -17,9 +17,12 @@
     "require-like": "~0.1.2",
     "contextify": "~0.1.4"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "through": "~2.2.7",
+    "tape": "~0.3.2"
+  },
   "scripts": {
-    "test": "node-trap ./test/"
+    "test": "tape test/*.js"
   },
   "repository": {
     "type": "git",
