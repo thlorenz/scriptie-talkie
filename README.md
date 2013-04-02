@@ -3,7 +3,6 @@
 Makes your code tell you what the intermediate results are when executing a script.
 
 ![changing-var](https://raw.github.com/thlorenz/scriptie-talkie/master/assets/changing-var.png)
-
 ![error](https://raw.github.com/thlorenz/scriptie-talkie/master/assets/error.png)
 
 ## Status
