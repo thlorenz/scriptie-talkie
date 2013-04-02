@@ -38,7 +38,7 @@ var talk = module.exports = function (script, scriptPath, opts) {
 
 if (module.parent) return;
 
-var scriptPath = process.argv[2] || path.join(__dirname, 'examples', 'error.js')
+var scriptPath = process.argv[2] || path.join(__dirname, 'examples', 'function-call-before-declaration.js')
   , script = fs.readFileSync(scriptPath, 'utf-8');
 
 talk(script, scriptPath);
