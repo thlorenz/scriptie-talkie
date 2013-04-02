@@ -58,3 +58,4 @@ talk(script, scriptPath, { write: console.error });
 
 ![objects-simple](https://raw.github.com/thlorenz/scriptie-talkie/master/assets/objects-simple.png)
 ![error](https://raw.github.com/thlorenz/scriptie-talkie/master/assets/error.png)
+![function-call-before-declaration.png](https://raw.github.com/thlorenz/scriptie-talkie/master/assets/function-call-before-declaration.png)
