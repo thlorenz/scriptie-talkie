@@ -2,6 +2,7 @@
 
 Makes your code tell you what the intermediate results are when executing a script.
 
+**changing-var.js**
 ```js
 var a = 3;
 
@@ -56,6 +57,31 @@ talk(script, scriptPath, { write: console.error });
 
 ## More Examples
 
+```js
+var o = { a: 1 };
+
+o.a = 2;
+```
 ![objects-simple](https://raw.github.com/thlorenz/scriptie-talkie/master/assets/objects-simple.png)
+
+```js
+var a = 3;
+
+a + b;
+
+var b = 2;
+
+console.log(b.hello());
+```
 ![error](https://raw.github.com/thlorenz/scriptie-talkie/master/assets/error.png)
+
+```js
+var a = 1;
+foo();
+
+function foo () {
+  return a++;
+}
+foo() + 1;
+```
 ![function-call-before-declaration.png](https://raw.github.com/thlorenz/scriptie-talkie/master/assets/function-call-before-declaration.png)
