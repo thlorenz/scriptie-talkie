@@ -1,22 +1,10 @@
-# scriptie-talkie
+# scriptie-talkie [![build status](https://secure.travis-ci.org/thlorenz/scriptie-talkie.png)](http://travis-ci.org/thlorenz/scriptie-talkie)
 
 Makes your code tell you what the intermediate results are when executing a script.
 
 ## Status
 
-Not very functional at this point. A terminal-only prototype is implemented, but lots of work remains.
+Terminal version working, browser version remains as todo as is adding more tests.
 
-Please move along for now even if you need this tool as much as I do ;).
-
-## In the Terminal
-
-When run from the terminal, it will print the syntax highlighted script along with comments outlining what values were
-returned/changed when the particular line was executed.
-
-## In the Browser
-
-When run with the browser flag, it will serve a page that shows the script that was run along with tree view
-representations of objects returned/changed by each line. 
-
-These objects can then be inspected via an interactive tree control (similar to chrome dev tools).
-
+For now you can clone this repo and try `node index examples/changing-var.js` or any other file inside the example
+folder.
