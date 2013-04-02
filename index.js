@@ -35,10 +35,3 @@ var talk = module.exports = function (script, scriptPath, opts) {
     write(lines.join('\n')); 
   });
 };
-
-if (module.parent) return;
-
-var scriptPath = process.argv[2] || path.join(__dirname, 'examples', 'function-call-before-declaration.js')
-  , script = fs.readFileSync(scriptPath, 'utf-8');
-
-talk(script, scriptPath);

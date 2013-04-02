@@ -24,6 +24,9 @@
   "scripts": {
     "test": "tape test/*.js"
   },
+  "bin": {
+    "scriptie-talkie": "./bin/scriptie-talkie.js"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/thlorenz/scriptie-talkie.git"
