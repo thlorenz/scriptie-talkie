@@ -1,0 +1,28 @@
+{
+  "name": "browser",
+  "version": "0.0.0",
+  "description": "Demonstrating sciptie-talkie in the browser bundled with browserify.",
+  "main": "browser.js",
+  "scripts": {
+    "test": "node-trap test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thlorenz/browser.git"
+  },
+  "homepage": "https://github.com/thlorenz/browser",
+  "dependencies": {
+    "browserify": "~2.11.0"
+  },
+  "devDependencies": {},
+  "keywords": [],
+  "author": {
+    "name": "Thorsten Lorenz",
+    "email": "thlorenz@gmx.de",
+    "url": "http://thlorenz.com"
+  },
+  "license": "MIT",
+  "engine": {
+    "node": ">=0.6"
+  }
+}
