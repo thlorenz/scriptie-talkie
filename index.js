@@ -27,20 +27,19 @@ module.exports = function (script, scriptPath, opts) {
 
   var snippets = snippetify(script);
 
-  evalSnippets(snippets, scriptPath, function (ctx) {
-    var tales = resolveTales(snippets);
+  var ctx = evalSnippets(snippets, scriptPath);
+  var tales = resolveTales(snippets);
 
-    var lines = toLines(script) 
-      , offset = 0;
+  var lines = toLines(script) 
+    , offset = 0;
 
-    tales
-      .forEach(function (x) {
-        lines.splice(x.insertAfter + offset, 0, x.tale);
-        offset++;
-      });
+  tales
+    .forEach(function (x) {
+      lines.splice(x.insertAfter + offset, 0, x.tale);
+      offset++;
+    });
 
-    lines = lines.filter(function (x) { return x.length; });
+  lines = lines.filter(function (x) { return x.length; });
 
-    write(lines.join('\n')); 
-  });
+  write(lines.join('\n')); 
 };
