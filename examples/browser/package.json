@@ -12,7 +12,8 @@
   },
   "homepage": "https://github.com/thlorenz/browser",
   "dependencies": {
-    "browserify": "~2.11.0"
+    "browserify": "~2.11.0",
+    "hypernal": "~0.1.0"
   },
   "devDependencies": {},
   "keywords": [],
