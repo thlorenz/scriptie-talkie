@@ -2,6 +2,8 @@
 
 Makes your code tell you what the intermediate results are when executing a script.
 
+[try scriptie talkie in the browser](http://thlorenz.github.io/scriptie-talkie/)
+
 ```js
 var a = 3;
 
@@ -52,9 +54,18 @@ var talk    =  require('scriptie-talkie')
 talk(script, scriptPath, { write: console.error });
 ```
 
+### browser support
+
+scriptie-talkie does work in the browser as long as a `vm` and `Buffer` module is available. Additionally the presence
+of a `process` with `process.browser = true` is essential.
+
+The easiest way to build an application that uses sciptie-talkie via
+[browserify](https://github.com/substack/node-browserify) as I did in [this
+example](https://github.com/thlorenz/scriptie-talkie/tree/master/examples/browser). The above mentioned [live
+sample](http://thlorenz.github.io/scriptie-talkie/) was built like that.
+
 ## Roadmap
 
-- version that works in the browser
 - integrate with [replpad](https://github.com/thlorenz/replpad)
 
 ## More Examples
