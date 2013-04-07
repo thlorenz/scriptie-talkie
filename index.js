@@ -3,6 +3,7 @@ var highlight    =  require('cardinal').highlight
   , snippetify   =  require('snippetify')
   , evalSnippets =  require('./lib/eval-snippets')
   , resolveTales =  require('./lib/resolve-tales')
+  , browser      =  process.browser
   ;
 
 function highlightLines(script) {
@@ -36,8 +37,9 @@ module.exports = function (script, scriptPath, opts) {
   tales
     .forEach(function (x) {
       if (!x.tale.length) return;
-      lines.splice(x.insertAfter + offset, 0, x.tale); offset++;
-      lines.splice(x.insertAfter + offset, 0, ' ');    offset++;
+      lines.splice(x.insertAfter + offset++, 0, x.tale);
+      // not sure why the '\n' included in resolve-tales.formatSectionEnd is not working with hypernal
+      if (browser) lines.splice(x.insertAfter + offset++, 0, ' ');
     });
 
   lines = lines.filter(function (x) { return x.length; });
