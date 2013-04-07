@@ -23,7 +23,7 @@ function highlightLines(script) {
 module.exports = function (script, scriptPath, opts) {
   opts = opts || {};
   var toLines =  opts.toLines || highlightLines
-    , write   =  opts.write   || console.log.bind(console);
+    , write   =  opts.write   || process.browser ? function () {} : console.log.bind(console);
 
   var snippets = snippetify(script);
 
@@ -35,8 +35,9 @@ module.exports = function (script, scriptPath, opts) {
 
   tales
     .forEach(function (x) {
-      lines.splice(x.insertAfter + offset, 0, x.tale);
-      offset++;
+      if (!x.tale.length) return;
+      lines.splice(x.insertAfter + offset, 0, x.tale); offset++;
+      lines.splice(x.insertAfter + offset, 0, ' ');    offset++;
     });
 
   lines = lines.filter(function (x) { return x.length; });

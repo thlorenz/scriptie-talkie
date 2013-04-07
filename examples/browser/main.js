@@ -1,8 +1,28 @@
 'use strict';
-var scriptieTalkie = require('../../');
+/*global ace */
+/*jshint browser: true */
 
-var term = require('hypernal')(100, 80);
+var scriptieTalkie =  require('../../')
+  , debounce       =  require('debounce');
+
+var term = require('hypernal')(104, 80);
 term.appendTo('#terminal');
 
-var lines = scriptieTalkie('"use strict";\nvar a = 4;\nvar b = a++; var o = {};\no.c = a + b;');
-lines.forEach(function (line) { term.writeln(line); });
+var editor = ace.edit("editor");
+editor.setTheme("ace/theme/monokai");
+editor.getSession().setMode("ace/mode/javascript");
+editor.on('change', debounce(evaluateScript, 800, false));
+editor.setValue(require('./default-sample'));
+
+evaluateScript();
+
+function evaluateScript() {
+  var script = editor.getValue();
+  term.reset();
+  try { 
+    scriptieTalkie(script)
+      .forEach(function (line) { term.writeln(line); });
+  } catch (e) {
+    console.error(e);
+  } 
+}

@@ -1,13 +1,26 @@
-#terminal, #terminal-code {
-  width         :  700px;
-  height        :  700px;
+#terminal {
   background    :  black;
-  border-radius :  15px;
-  border        :  2px solid #CEE1F0;
-  padding       :  15px 20px 15px 20px;
-  font-size     :  16px;
+  font-size     :  14px;
   font-family   :  Terminus,Consolas,Profont,Monaco,Inconsolata,Inconsolata-g,
       Unifont,Lime,"ClearlyU PUA",Clean,"DejaVu Sans Mono","Lucida Console",
       "Bitstream Vera Sans Mono",Freemono,"Liberation Mono",Dina,Anka,Droid Sans Mono,
       Anonymous Pro,Proggy fonts,Envy Code R,Gamow,Courier,"Courier New",Terminal,monospace;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 50%;
+  width: 50% ;
+
+  padding-left: 10px;
+}
+
+#editor { 
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50%;
 }
