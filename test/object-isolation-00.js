@@ -4,7 +4,7 @@
 var test    =  require('tap').test
   , talk    =  require('..')
 
-var scriptPath =  require.resolve('./fixtures/object-isolation')
+var scriptPath =  require.resolve('./fixtures/object-isolation-00')
   , script     =  require('fs').readFileSync(scriptPath, 'utf-8')
 
 test('\n# object isolation\n', function (t) {
