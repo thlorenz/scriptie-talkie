@@ -99,19 +99,28 @@ h1.title {
   float: left; 
   margin-left: 13px;
 }
-.tagline p {
-  float: right;
-  display:block;
-  margin-right: 200px;
-}
-.tagline .code {
-  width: 180px;
+.tagline #fork {
+  width: 165px;
   text-indent: 40px;
   float: right;
+  margin-top: 3px;
   display: block;
 }
 
-#main {
+.tagline iframe { /*tweet button */
+  float: left;
+  margin-top: 5px;
+  margin-left: 20px;
+  margin-right: -30px;
+}
+
+.tagline #code-link {
+  width: 220px;
+  text-indent: 40px;
+  float: left;
+  display: block;
+  margin-left: 20px;
+  margin-top: 3px;
 }
 
 a.code {
@@ -140,13 +149,14 @@ footer .owner {
   padding: 5px 15px;
   margin: -59px -10px;
   color: #d6d6d6;
+  height: 50px;
 }
 
 footer .owner .avatar {
   background-color: #666;
   display: block;
-  margin: -28px 10px 0 0;
-  width: 60px;
+  margin: -10px 10px 0 0;
+  width: 42px;
   float: left;
 }
 
@@ -158,11 +168,16 @@ footer .owner img {
 
 footer .owner p {
   font-family:Georgia, serif;
+  float: left;
 }
 
 footer .owner p a {
   font-size: 16px;
   font-style: italic;
+}
+
+footer .owner p.code {
+  float: right;
 }
 
 /* terminal and editor */
@@ -191,5 +206,4 @@ footer .owner p a {
   bottom: 44px;
   left: 0;
   width: 50%;
-  z-index: -1;
 }
