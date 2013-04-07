@@ -23,7 +23,7 @@ function highlightLines(script) {
 module.exports = function (script, scriptPath, opts) {
   opts = opts || {};
   var toLines =  opts.toLines || highlightLines
-    , write   =  opts.write   || process.browser ? function () {} : console.log.bind(console);
+    , write   =  opts.write   || (process.browser === true ? function () {} : console.log.bind(console));
 
   var snippets = snippetify(script);
 

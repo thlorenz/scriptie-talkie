@@ -19,6 +19,7 @@ evaluateScript();
 function evaluateScript() {
   var script = editor.getValue();
   term.reset();
+  if (!script.trim().length) return;
   try { 
     scriptieTalkie(script)
       .forEach(function (line) { term.writeln(line); });
