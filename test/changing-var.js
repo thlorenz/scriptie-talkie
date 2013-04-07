@@ -2,7 +2,6 @@
 /*jshint asi: true */
 
 var test    =  require('tape')
-  , through =  require('through')
   , talk    =  require('..')
 
 var scriptPath =  require.resolve('../examples/changing-var')
