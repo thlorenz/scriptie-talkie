@@ -24,6 +24,7 @@ function evaluateScript() {
     scriptieTalkie(script)
       .forEach(function (line) { term.writeln(line); });
   } catch (e) {
-    console.error(e);
+    term.writeln('unable to parse the current code, looks like you have an error on: ');
+    term.writeln('line: ' + e.inner.lineNumber + ' column: ' + e.inner.column);
   } 
 }
