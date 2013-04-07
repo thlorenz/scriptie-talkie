@@ -15,14 +15,14 @@
     "ansicolors": "~0.2.1",
     "snippetify": "~0.1.0",
     "require-like": "~0.1.2",
-    "tape": "~0.3.3"
+    "tap": "~0.4.1"
   },
   "devDependencies": {
     "through": "~2.2.7",
     "tape": "~0.3.2"
   },
   "scripts": {
-    "test": "tape test/*.js"
+    "test": "tap test/*.js"
   },
   "bin": {
     "scriptie-talkie": "./bin/scriptie-talkie.js"
