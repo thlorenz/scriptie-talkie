@@ -11,7 +11,7 @@ term.appendTo('#terminal');
 var editor = ace.edit("editor");
 editor.setTheme("ace/theme/monokai");
 editor.getSession().setMode("ace/mode/javascript");
-editor.on('change', debounce(evaluateScript, 800, false));
+editor.on('change', debounce(evaluateScript, 400, false));
 editor.setValue(require('./default-sample'));
 
 evaluateScript();
