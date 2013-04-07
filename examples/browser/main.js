@@ -13,7 +13,9 @@ editor.setTheme("ace/theme/monokai");
 editor.getSession().setMode("ace/mode/javascript");
 editor.on('change', debounce(evaluateScript, 400, false));
 editor.setValue(require('./default-sample'));
+editor.$highlightActiveLine = false;
 
+window.editor = editor;
 evaluateScript();
 
 function evaluateScript() {
