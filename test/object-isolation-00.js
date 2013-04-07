@@ -8,10 +8,8 @@ var scriptPath =  require.resolve('./fixtures/object-isolation-00')
   , script     =  require('fs').readFileSync(scriptPath, 'utf-8')
 
 test('\n# object isolation\n', function (t) {
-  var lines = talk(
-      script    
-    , scriptPath
-  );
+  var lines = talk(script, scriptPath);
+
   t.deepEqual(
       lines
     ,['\u001b[90m1: \u001b[39m\u001b[32mvar\u001b[39m \u001b[37mo\u001b[39m \u001b[93m=\u001b[39m \u001b[33m{\u001b[39m \u001b[37mfoo\u001b[39m\u001b[93m:\u001b[39m \u001b[33m{\u001b[39m\u001b[33m}\u001b[39m\u001b[32m,\u001b[39m \u001b[37mbar\u001b[39m\u001b[93m:\u001b[39m \u001b[33m{\u001b[39m \u001b[33m}\u001b[39m \u001b[33m}\u001b[39m \u001b[90m// + o: { foo: {}, bar: {} }\u001b[39m',
