@@ -39,7 +39,7 @@ function evaluateScript() {
 
 function getRoot() {
   var loc = window.location;
-  return loc.origin + loc.host + loc.pathname;
+  return loc.protocol + '//' + loc.host + loc.pathname;
 }
 
 function updateLink(code) {
