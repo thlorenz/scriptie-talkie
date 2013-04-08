@@ -7,7 +7,7 @@
       Anonymous Pro,Proggy fonts,Envy Code R,Gamow,Courier,"Courier New",Terminal,monospace;
 
   position: absolute;
-  top: 0;
+  top: 40px;
   right: 0;
   bottom: 0;
   left: 50%;
@@ -18,7 +18,7 @@
 
 #editor { 
   position: absolute;
-  top: 0;
+  top: 40px;
   right: 0;
   bottom: 0;
   left: 0;
