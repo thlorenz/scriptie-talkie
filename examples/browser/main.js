@@ -48,7 +48,7 @@ function updateLinkAndTweet(code) {
   codeLink && codeLink.setAttribute && codeLink.setAttribute('href', link);
 
   if (codeTweet && codeTweet.setAttribute) {
-      codeTweet.setAttribute('data-text', "I just created this interesting #JavaScript using @thl0's scriptie-talkie:\n\n" + link);
+      codeTweet.setAttribute('data-text', "I just created this interesting #JavaScript using @thl0's scriptie-talkie:");
       codeTweet.setAttribute('data-url', link);
   }
 }
