@@ -6,6 +6,7 @@ var scriptieTalkie =  require('../../')
   , debounce       =  require('debounce')
   , query          =  require('./query')
   , codeLink       =  document.getElementById('code-link')
+  , codeTweet      =  document.getElementById('code-tweet')
   , root           =  getRoot()
   ;
 
@@ -25,7 +26,7 @@ initScript();
 
 function evaluateScript() {
   var script = editor.getValue();
-  updateLink(script);
+  updateLinkAndTweet(script);
   term.reset();
   if (!script.trim().length) return;
   try { 
@@ -42,12 +43,18 @@ function getRoot() {
   return loc.protocol + '//' + loc.host + loc.pathname;
 }
 
-function updateLink(code) {
-  codeLink && codeLink.setAttribute && codeLink.setAttribute('href', root + '?' + query.stringify(code));
+function updateLinkAndTweet(code) {
+  var link = root + '?' + query.stringify(code);
+  codeLink && codeLink.setAttribute && codeLink.setAttribute('href', link);
+
+  if (codeTweet && codeTweet.setAttribute) {
+      codeTweet.setAttribute('data-text', "I just created this interesting #JavaScript using @thl0's scriptie-talkie:\n\n" + link);
+      codeTweet.setAttribute('data-url', link);
+  }
 }
 
 function initScript() {
   var code = query.parse() || require('./default-sample');
   editor.setValue(code);
-  updateLink(code);
+  updateLinkAndTweet(code);
 }
