@@ -5,9 +5,9 @@ var qs = require('querystring');
 
 exports.parse = function () {
   var query = window.location.search.substring(1);
-  return qs.parse(query).code;
+  return qs.parse(query);
 };
 
-exports.stringify = function (code) {
-  return qs.stringify({ code: code });
+exports.stringify = function (obj) {
+  return qs.stringify(obj);
 };

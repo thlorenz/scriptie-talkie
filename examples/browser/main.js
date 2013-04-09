@@ -44,7 +44,7 @@ function getRoot() {
 }
 
 function updateLinkAndTweet(code) {
-  var link = root + '?' + query.stringify(code);
+  var link = root + '?' + query.stringify({ code: code });
   codeLink && codeLink.setAttribute && codeLink.setAttribute('href', link);
 
   if (codeTweet && codeTweet.setAttribute) {
@@ -54,7 +54,8 @@ function updateLinkAndTweet(code) {
 }
 
 function initScript() {
-  var code = query.parse() || require('./default-sample');
+  var parsed = query.parse();
+  var code = (parsed && parsed.code) || require('./default-sample');
   editor.setValue(code);
   updateLinkAndTweet(code);
 }
