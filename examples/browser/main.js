@@ -56,6 +56,8 @@ function updateLinkAndTweet(code) {
 function initScript() {
   var parsed = query.parse();
   var code = (parsed && parsed.code) || require('./default-sample');
+  if (code.charAt(code.length - 1) === '/') code = code.substring(0, code.length - 1);
+
   editor.setValue(code);
   updateLinkAndTweet(code);
 }
