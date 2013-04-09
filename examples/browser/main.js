@@ -50,22 +50,22 @@ function initScript() {
   updateLinkAndTweet(code);
 }
 
+var term = require('hypernal')(104, 80);
+term.appendTo('#terminal');
+
+var editor = ace.edit("editor");
+editor.setTheme("ace/theme/monokai");
+editor.getSession().setMode("ace/mode/javascript");
+editor.$highlightActiveLine = false;
+
+initScript();
+
 if (ua.browser !== 'chrome' || ua.os === 'ipad') {
-  alert('scriptie-talkie is very sorry, but it will freeze any browser except chrome running on a pc or android and that would be evil wouldn\'t it?\n');
+  alert('scriptie-talkie is very sorry, but it will freeze any browser except chrome running on a pc or android and that would be evil wouldn\'t it?\n'
+       + '\nYou may use the editor, but scriptie-talkie will remain inactive');
 } else {
 
-  var term = require('hypernal')(104, 80);
-  term.appendTo('#terminal');
-
-  var editor = ace.edit("editor");
-  editor.setTheme("ace/theme/monokai");
-  editor.getSession().setMode("ace/mode/javascript");
   editor.on('change', debounce(evaluateScript, 400, false));
-  editor.$highlightActiveLine = false;
-
-  window.editor = editor;
-
-  initScript();
   evaluateScript();
 
 }
