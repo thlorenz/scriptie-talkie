@@ -14,7 +14,8 @@
   "dependencies": {
     "browserify": "~2.11.0",
     "hypernal": "~0.1.0",
-    "debounce": "0.0.2"
+    "debounce": "0.0.2",
+    "useragent-wtf": "~1.0.1"
   },
   "devDependencies": {},
   "keywords": [],
