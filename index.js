@@ -20,6 +20,9 @@ function highlightLines(script) {
  * @param opts {Object} { 
  *    toLines: function(code:String) -> [String] - to split script into lines -- uses cardinal syntax highlighter by default
  *    write  : function(result:String) - to be called to write the result -- default console.log
+ *    diff   : { joinLinesAt: at what point is diff compacted to one line      
+ *             , maxLineLength: at which length is a diff line cut of with an ellipsis
+ *             }
  */
 module.exports = function (script, scriptPath, opts) {
   opts = opts || {};
@@ -28,8 +31,8 @@ module.exports = function (script, scriptPath, opts) {
 
   var snippets = snippetify(script);
 
-  var ctx = evalSnippets(snippets, scriptPath);
-  var tales = resolveTales(snippets);
+  var ctx = evalSnippets(snippets, scriptPath, opts.diff);
+  var tales = resolveTales(snippets, opts);
 
   var lines = toLines(script) 
     , offset = 0;

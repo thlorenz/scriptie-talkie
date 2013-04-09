@@ -43,6 +43,9 @@ Prints the highlighted code of `script.js` with intermediate results.
  * @param opts {Object} { 
  *    toLines: function(code:String) -> [String] - to split script into lines -- uses cardinal syntax highlighter by default
  *    write  : function(result:String) - to be called to write the result -- default console.log
+ *    diff   : { joinLinesAt: at what point is diff compacted to one line               -- default 20
+ *             , maxLineLength: at which length is a diff line cut of with an ellipsis  -- default 380
+ *             }
  */
  ```
 
@@ -51,7 +54,7 @@ var talk    =  require('scriptie-talkie')
   , fs      =  require('fs');
   ,  script =  fs.readFileSync(scriptPath, 'utf-8');
 
-talk(script, scriptPath, { write: console.error });
+talk(script, scriptPath, { write: console.error, { diff: { joinLinesAt: 80 } });
 ```
 
 ### browser support
