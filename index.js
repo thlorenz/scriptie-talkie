@@ -32,7 +32,7 @@ module.exports = function (script, scriptPath, opts) {
   var snippets = snippetify(script);
 
   var ctx = evalSnippets(snippets, scriptPath, opts.diff);
-  var tales = resolveTales(snippets);
+  var tales = resolveTales(snippets, opts);
 
   var lines = toLines(script) 
     , offset = 0;
