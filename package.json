@@ -1,6 +1,6 @@
 {
   "name": "scriptie-talkie",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Makes your code tell you what the intermediate results are when executing a script.",
   "main": "scriptie-talkie.js",
   "directories": {
