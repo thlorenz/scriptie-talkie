@@ -10,12 +10,12 @@
     "cardinal": "~0.3.1",
     "esprima": "~1.0.2",
     "difflet": "thlorenz/difflet",
-    "deep-equal": "0.0.0",
     "clone": "~0.1.5",
     "ansicolors": "~0.2.1",
     "snippetify": "~0.1.0",
     "require-like": "~0.1.2",
-    "tap": "~0.4.1"
+    "tap": "~0.4.1",
+    "deep-is": "~0.1.0"
   },
   "devDependencies": {
     "through": "~2.2.7",
