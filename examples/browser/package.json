@@ -15,7 +15,8 @@
     "browserify": "~2.11.0",
     "hypernal": "~0.1.0",
     "debounce": "0.0.2",
-    "useragent-wtf": "~1.0.1"
+    "useragent-wtf": "~1.0.1",
+    "ecstatic": "~0.4.2"
   },
   "devDependencies": {},
   "keywords": [],
