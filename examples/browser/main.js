@@ -20,8 +20,16 @@ function evaluateScript() {
     scriptieTalkie(script)
       .forEach(function (line) { term.writeln(line); });
   } catch (e) {
-    term.writeln('unable to parse the current code, looks like you have an error on: ');
-    term.writeln('line: ' + e.inner.lineNumber + ' column: ' + e.inner.column);
+    console.log(e.stack);
+    console.error(e.toString());
+    if (e.inner) {
+      term.writeln('unable to parse the current code, looks like you have an error on: ');
+      term.writeln('line: ' + e.inner.lineNumber + ' column: ' + e.inner.column);
+    } else {
+      term.writeln(e.toString());
+      term.writeln(e.stack);
+    }
+    
   } 
 }
 
@@ -60,12 +68,5 @@ editor.$highlightActiveLine = false;
 
 initScript();
 
-if (ua.browser !== 'chrome' || ua.os === 'ipad') {
-  alert('scriptie-talkie is very sorry, but it will freeze any browser except chrome running on a pc or android and that would be evil wouldn\'t it?\n'
-       + '\nYou may use the editor, but scriptie-talkie will remain inactive');
-} else {
-
-  editor.on('change', debounce(evaluateScript, 400, false));
-  evaluateScript();
-
-}
+editor.on('change', debounce(evaluateScript, 400, false));
+evaluateScript();
