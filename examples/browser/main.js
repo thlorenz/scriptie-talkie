@@ -6,6 +6,7 @@ var scriptieTalkie =  require('../../')
   , debounce       =  require('debounce')
   , ua             =  require('useragent-wtf')
   , query          =  require('./query')
+  , getStyle       =  require('./get-style')
   , codeLink       =  document.getElementById('code-link')
   , codeTweet      =  document.getElementById('code-tweet')
   , root           =  getRoot()
@@ -63,8 +64,18 @@ function initScript() {
   updateLinkAndTweet(code);
 }
 
-var term = require('hypernal')(104, 80);
-term.appendTo('#terminal');
+var terminal      =  document.getElementById('terminal')
+  , testFontWidth =  document.getElementById('test-font-width').clientWidth + 1
+  , fontSize      =  parseInt(getStyle(terminal, 'font-size'), 10)
+  , fontWidth     =  Math.round(testFontWidth / (26 * 2))
+  , height        =  terminal.clientHeight
+  , width         =  terminal.clientWidth
+  , rows          =  Math.round(height / (fontSize + 2.3))
+  , cols          =  Math.round(width / fontWidth)
+  ;
+
+var term = require('hypernal')(cols, rows);
+term.appendTo(terminal);
 
 var editor = ace.edit("editor");
 editor.setTheme("ace/theme/monokai");
