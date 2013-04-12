@@ -4,7 +4,6 @@
 
 var scriptieTalkie =  require('../../')
   , debounce       =  require('debounce')
-  , ua             =  require('useragent-wtf')
   , query          =  require('./query')
   , getStyle       =  require('./get-style')
   , codeLink       =  document.getElementById('code-link')
