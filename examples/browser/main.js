@@ -69,7 +69,7 @@ var terminal      =  document.getElementById('terminal')
   , fontWidth     =  Math.round(testFontWidth / (26 * 2))
   , height        =  terminal.clientHeight
   , width         =  terminal.clientWidth
-  , rows          =  Math.round(height / (fontSize + 2.3))
+  , rows          =  Math.round(height / (fontSize + 6))
   , cols          =  Math.round(width / fontWidth)
   ;
 
