@@ -29,7 +29,7 @@ module.exports = function (script, scriptPath, opts) {
   var toLines =  opts.toLines || highlightLines
     , write   =  opts.write   || (process.browser === true ? function () {} : console.log.bind(console));
 
-  var snippets = snippetify(script);
+  var snippets = snippetify(script, { nonstrict: true });
 
   var ctx = evalSnippets(snippets, scriptPath, opts.diff);
   var tales = resolveTales(snippets, opts);
