@@ -27,7 +27,8 @@
     "mold-source-map": "~0.2.0"
   },
   "scripts": {
-    "test": "tap test/*.js"
+    "test": "tap test/*.js",
+    "tape": "node test/browser/build && open test/browser/index.html"
   },
   "bin": {
     "scriptie-talkie": "./bin/scriptie-talkie.js"

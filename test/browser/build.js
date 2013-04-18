@@ -11,7 +11,7 @@ var browserify =  require('browserify')
 
 var bundle = module.exports = function (tests) {
   tests = tests  || allTests();
-  console.log('bundling', tests)
+  console.log('bundling:\n', tests)
   return browserify(tests)
     .transform('brfs')
     .bundle({ debug: true })
