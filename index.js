@@ -27,7 +27,7 @@ function highlightLines(script) {
 module.exports = function (script, scriptPath, opts) {
   opts = opts || {};
   var toLines =  opts.toLines || highlightLines
-    , write   =  opts.write   || (process.browser === true ? function () {} : console.log.bind(console));
+    , writeln =  opts.writeln || (process.browser === true ? function () {} : console.log.bind(console));
 
   var snippets = snippetify(script, { nonstrict: true });
 
@@ -47,7 +47,7 @@ module.exports = function (script, scriptPath, opts) {
 
   lines = lines.filter(function (x) { return x.length; });
 
-  write(lines.join('\n')); 
+  lines.forEach(function (line) { writeln(line); });
 
   return lines;
 };
