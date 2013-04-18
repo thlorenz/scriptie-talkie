@@ -4,13 +4,18 @@
 var test    =  require('tape')
   , through =  require('through')
   , talk    =  require('..')
+  , fs      =  require('fs')
+  , writeln =  require('./browser/writeln')
 
-var scriptPath =  require.resolve('../examples/objects-simple')
-  , script     =  require('fs').readFileSync(scriptPath, 'utf-8')
+var script = fs.readFileSync(__dirname + '/../examples/objects-simple.js', 'utf-8')
+
 
 test('\n# compacting\n', function (t) {
+  writeln('*** ' + __filename + ' ***'); writeln(''); 
+
+  writeln('# compacting'); writeln(''); 
     
-  var lines = talk(script, scriptPath, { diff: { joinLinesAt: 2 } });
+  var lines = talk(script, __dirname + '/../examples/objects-simple', { diff: { joinLinesAt: 2 }, writeln: writeln });
 
   t.deepEqual(
       lines
@@ -25,8 +30,9 @@ test('\n# compacting\n', function (t) {
 })
 
 test('\n# max line length\n', function (t) {
-    
-  var lines = talk(script, scriptPath, { diff: { maxLineLength: 20 } });
+  writeln('# max line length'); writeln(''); 
+
+  var lines = talk(script, __dirname + '/../examples/objects-simple', { diff: { maxLineLength: 20 }, writeln: writeln });
 
   t.deepEqual(
       lines
@@ -42,7 +48,9 @@ test('\n# max line length\n', function (t) {
 
 test('\n# compacting and max line length\n', function (t) {
     
-  var lines = talk(script, scriptPath, { diff: { joinLinesAt: 2, maxLineLength: 15 } });
+  writeln('# compacting and max line length'); writeln(''); 
+
+  var lines = talk(script, __dirname + '/../examples/objects-simple', { diff: { joinLinesAt: 2, maxLineLength: 15 }, writeln: writeln });
 
   t.deepEqual(
       lines

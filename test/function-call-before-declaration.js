@@ -4,12 +4,15 @@
 var test    =  require('tape')
   , through =  require('through')
   , talk    =  require('..')
+  , fs      =  require('fs')
+  , writeln =  require('./browser/writeln')
 
-var scriptPath =  require.resolve('../examples/function-call-before-declaration')
-  , script     =  require('fs').readFileSync(scriptPath, 'utf-8')
+var script = fs.readFileSync(__dirname + '/../examples/function-call-before-declaration.js', 'utf-8')
 
 test('\n# function-call-before-declaration\n', function (t) {
-  var lines = talk(script, scriptPath);
+  writeln('*** ' + __filename + ' ***'); writeln(''); 
+
+  var lines = talk(script, __dirname + '/../examples/function-call-before-declaration.js', { writeln: writeln });
 
   t.deepEqual(
       lines

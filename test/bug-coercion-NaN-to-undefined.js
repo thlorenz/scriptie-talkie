@@ -1,16 +1,19 @@
 'use strict';
 /*jshint asi: true */
 
-var test    =  require('tape')
-  , talk    =  require('..')
+var test =  require('tape')
+  , talk =  require('..')
+  , fs   =  require('fs')
+  , writeln  =  require('./browser/writeln')
 
-var scriptPath =  require.resolve('./fixtures/bug-coercion-NaN-to-undefined')
-  , script     =  require('fs').readFileSync(scriptPath, 'utf-8')
+var script = fs.readFileSync(__dirname + '/fixtures/bug-coercion-NaN-to-undefined.js', 'utf-8')
 
 // see: https://github.com/thlorenz/scriptie-talkie/issues/1
 // appearently this is only broken in the browser implementation since this test passed without change
 test('\n# ensuring that NaN is not coerced to undefined\n', function (t) {
-  var lines = talk(script, scriptPath);
+  writeln('*** ' + __filename + ' ***'); writeln(''); 
+
+  var lines = talk(script, __dirname + '/fixtures/bug-coercion-NaN-to-undefined', { writeln: writeln });
 
   t.deepEqual(
       lines

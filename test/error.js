@@ -4,12 +4,15 @@
 var test    =  require('tape')
   , through =  require('through')
   , talk    =  require('..')
+  , fs      =  require('fs')
+  , writeln =  require('./browser/writeln')
 
-var scriptPath =  require.resolve('../examples/error')
-  , script     =  require('fs').readFileSync(scriptPath, 'utf-8')
+var script = fs.readFileSync(__dirname + '/../examples/error.js', 'utf-8')
 
 test('\n# error\n', function (t) {
-  var lines = talk(script, scriptPath);
+  writeln('*** ' + __filename + ' ***'); writeln(''); 
+
+  var lines = talk(script, __dirname + '/../examples/error', { writeln: writeln });
 
   t.deepEqual(
       lines 

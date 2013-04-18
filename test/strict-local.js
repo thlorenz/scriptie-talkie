@@ -2,13 +2,17 @@
 /*jshint asi: true */
 
 var test    =  require('tape')
+  , through =  require('through')
   , talk    =  require('..')
+  , fs      =  require('fs')
+  , writeln =  require('./browser/writeln')
 
-var scriptPath =  require.resolve('./fixtures/strict-local')
-  , script     =  require('fs').readFileSync(scriptPath, 'utf-8')
+var script = fs.readFileSync(__dirname + '/fixtures/strict-local.js', 'utf-8')
 
 test('\n# strict local\n', function (t) {
-  var lines = talk(script, scriptPath);
+  writeln('*** ' + __filename + ' ***'); writeln(''); 
+
+  var lines = talk(script, __dirname + '/fixtures/strict-local', { writeln: writeln });
 
   t.deepEqual(
       lines

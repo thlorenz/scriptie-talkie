@@ -4,12 +4,14 @@
 var test     =  require('tape')
   , talk     =  require('..')
   , fs       =  require('fs')
-  , terminal  =  require('./browser/create-terminal')
+  , writeln  =  require('./browser/writeln')
 
 var script = fs.readFileSync(__dirname + '/../examples/changing-var.js', 'utf-8')
 
 test('\n# changing var\n', function (t) {
-  var lines = talk(script, __dirname + '/../examples/changing-var', { writeln: terminal() });
+  writeln('*** ' + __filename + ' ***'); writeln(''); 
+
+  var lines = talk(script, __dirname + '/../examples/changing-var', { writeln: writeln });
 
   t.deepEqual(
       lines

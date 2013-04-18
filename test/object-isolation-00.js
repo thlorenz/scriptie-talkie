@@ -2,13 +2,17 @@
 /*jshint asi: true */
 
 var test    =  require('tape')
+  , through =  require('through')
   , talk    =  require('..')
+  , fs      =  require('fs')
+  , writeln =  require('./browser/writeln')
 
-var scriptPath =  require.resolve('./fixtures/object-isolation-00')
-  , script     =  require('fs').readFileSync(scriptPath, 'utf-8')
+var script = fs.readFileSync(__dirname + '/fixtures/object-isolation-00.js', 'utf-8')
 
 test('\n# object isolation\n', function (t) {
-  var lines = talk(script, scriptPath);
+  writeln('*** ' + __filename + ' ***'); writeln(''); 
+
+  var lines = talk(script, __dirname + '/fixtures/object-isolation-00', { writeln: writeln });
 
   t.deepEqual(
       lines

@@ -4,13 +4,16 @@
 var test    =  require('tape')
   , through =  require('through')
   , talk    =  require('..')
+  , fs      =  require('fs')
+  , writeln =  require('./browser/writeln')
 
-var scriptPath =  require.resolve('./fixtures/diff-NaN')
-  , script     =  require('fs').readFileSync(scriptPath, 'utf-8')
+var script = fs.readFileSync(__dirname + '/fixtures/diff-NaN.js', 'utf-8')
 
 test('\n# diffing values that were NaN and still are NaN \n', function (t) {
+  writeln('*** ' + __filename + ' ***'); writeln(''); 
+
     
-  var lines = talk(script, scriptPath);
+  var lines = talk(script, __dirname + '/fixtures/diff-NaN', { writeln: writeln });
 
   t.deepEqual(
       lines
