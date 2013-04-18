@@ -1,14 +1,15 @@
 'use strict';
 /*jshint asi: true */
 
-var test    =  require('tap').test
-  , talk    =  require('..')
+var test     =  require('tape')
+  , talk     =  require('..')
+  , fs       =  require('fs')
+  , terminal  =  require('./browser/create-terminal')
 
-var scriptPath =  require.resolve('../examples/changing-var')
-  , script     =  require('fs').readFileSync(scriptPath, 'utf-8')
+var script = fs.readFileSync(__dirname + '/../examples/changing-var.js', 'utf-8')
 
 test('\n# changing var\n', function (t) {
-  var lines = talk(script, scriptPath);
+  var lines = talk(script, __dirname + '/../examples/changing-var', { writeln: terminal() });
 
   t.deepEqual(
       lines

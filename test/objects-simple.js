@@ -1,7 +1,7 @@
 'use strict';
 /*jshint asi: true */
 
-var test    =  require('tap').test
+var test    =  require('tape')
   , through =  require('through')
   , talk    =  require('..')
 

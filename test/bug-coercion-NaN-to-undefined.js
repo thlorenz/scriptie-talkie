@@ -1,7 +1,7 @@
 'use strict';
 /*jshint asi: true */
 
-var test    =  require('tap').test
+var test    =  require('tape')
   , talk    =  require('..')
 
 var scriptPath =  require.resolve('./fixtures/bug-coercion-NaN-to-undefined')

@@ -13,13 +13,18 @@
     "clone": "~0.1.5",
     "ansicolors": "~0.2.1",
     "require-like": "~0.1.2",
-    "tap": "~0.4.1",
     "deep-is": "~0.1.0",
     "snippetify": "~0.2.0"
   },
   "devDependencies": {
     "through": "~2.2.7",
-    "tape": "~0.3.2"
+    "tape": "~0.3.3",
+    "tap": "~0.4.1",
+    "brfs": "0.0.4",
+    "hypernal": "~0.1.2",
+    "browserify": "~2.12.0",
+    "ecstatic": "~0.4.2",
+    "mold-source-map": "~0.2.0"
   },
   "scripts": {
     "test": "tap test/*.js"
