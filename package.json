@@ -57,13 +57,13 @@
         10,
         14,
         15,
-        'nightly'
+        "nightly"
       ],
       "chrome": [
         10,
         25,
         26,
-        'canary'
+        "canary"
       ],
       "safari": [
         5.1
