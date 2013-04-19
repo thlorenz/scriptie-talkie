@@ -45,5 +45,33 @@
   "author": "Thorsten Lorenz <thlorenz@gmx.de> (thlorenz.com)",
   "license": "MIT",
   "readmeFilename": "README.md",
-  "gitHead": "315c3a35223a0bd1eaa95399dc539ee681def21c"
+  "gitHead": "315c3a35223a0bd1eaa95399dc539ee681def21c",
+  "testling": {
+    "files": "test/*.js",
+    "browsers": {
+      "ie": [
+        9
+      ],
+      "ff": [
+        3.5,
+        10,
+        15
+      ],
+      "chrome": [
+        10,
+        22,
+        23,
+        24,
+        25,
+        26
+
+      ],
+      "safari": [
+        5.1
+      ],
+      "opera": [
+        12
+      ]
+    }
+  }
 }
