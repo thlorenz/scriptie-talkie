@@ -8,6 +8,9 @@ if (!process.browser) return module.exports = function (s) { process.stdout.writ
 var terminal = document.getElementById('terminal');
 var term = require('hypernal')(80, 80);
 term.appendTo(terminal);
-module.exports = term.writeln.bind(term);
-
+module.exports = function (s) { 
+  term.writeln(s);
+  // fix for the fact that hypernal doesn't interpret '\n' correctly at this point
+  if (s.charAt(s.length - 1) === '\n') term.writeln(' ');
+};
 }();

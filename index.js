@@ -41,11 +41,9 @@ module.exports = function (script, scriptPath, opts) {
     .forEach(function (x, idx) {
       if (!x.tale.length) return;
       lines.splice(x.insertAfter + offset++, 0, x.tale);
-      // not sure why the '\n' included in resolve-tales.formatSectionEnd is not working with hypernal
-      if (browser) lines.splice(x.insertAfter + offset++, 0, ' ');    
     });
 
-  lines = lines.filter(function (x) { return x.trim().length; });
+  lines = lines.filter(function (x) { return x.length; });
 
   lines.forEach(function (line) { writeln(line); });
 
