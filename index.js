@@ -1,4 +1,6 @@
 'use strict';
+require('./lib/shim-bind');
+
 var highlight    =  require('cardinal').highlight
   , snippetify   =  require('snippetify')
   , evalSnippets =  require('./lib/eval-snippets')

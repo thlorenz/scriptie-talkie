@@ -50,6 +50,7 @@
     "files": "test/*.js",
     "browsers": {
       "ie": [
+        8,
         9,
         10
       ],
