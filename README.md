@@ -1,10 +1,10 @@
 # scriptie-talkie [![build status](https://secure.travis-ci.org/thlorenz/scriptie-talkie.png)](http://travis-ci.org/thlorenz/scriptie-talkie?branch=master) 
-***[try it in the browser](http://thlorenz.github.io/scriptie-talkie/)***
 
-[![browser
-support](http://ci.testling.com/thlorenz/scriptie-talkie.png)](http://ci.testling.com/thlorenz/scriptie-talkie)
 Makes your code tell you what the intermediate results are when executing a script.
 
+***[try it in the browser](http://thlorenz.github.io/scriptie-talkie/)***
+
+[![browser support](http://ci.testling.com/thlorenz/scriptie-talkie.png)](http://ci.testling.com/thlorenz/scriptie-talkie)
 
 ```js
 var a = 3;
