@@ -50,17 +50,20 @@
     "files": "test/*.js",
     "browsers": {
       "ie": [
-        9
+        9,
+        10
       ],
       "ff": [
-        3.5,
         10,
-        15
+        14,
+        15,
+        'nightly'
       ],
       "chrome": [
         10,
         25,
-        26
+        26,
+        'canary'
       ],
       "safari": [
         5.1

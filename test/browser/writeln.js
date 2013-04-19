@@ -5,7 +5,9 @@
 
 if (!process.browser) return module.exports = function (s) { process.stdout.write(s + '\n'); };
 
-var terminal = document.getElementById('terminal');
+var terminal = document.createElement('div');
+document.body.appendChild(terminal);
+
 var term = require('hypernal')(80, 80);
 term.appendTo(terminal);
 module.exports = function (s) { 
