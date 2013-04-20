@@ -47,7 +47,8 @@
   "readmeFilename": "README.md",
   "gitHead": "315c3a35223a0bd1eaa95399dc539ee681def21c",
   "testling": {
-    "files": "test/*.js",
+    "preprocess": "node test/browser/build.js",
+    "html": "test/browser/index.html",
     "browsers": {
       "ie": [
         8,
