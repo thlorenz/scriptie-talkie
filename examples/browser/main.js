@@ -1,11 +1,12 @@
 'use strict';
-/*global ace */
 /*jshint browser: true */
+
 
 var scriptieTalkie =  require('../../')
   , debounce       =  require('debounce')
   , query          =  require('./query')
   , getStyle       =  require('./get-style')
+  , ace            =  require('ace')
   , codeLink       =  document.getElementById('code-link')
   , codeTweet      =  document.getElementById('code-tweet')
   , root           =  getRoot()
@@ -72,6 +73,10 @@ var terminal      =  document.getElementById('terminal')
   , rows          =  Math.round(height / (fontSize + 6))
   , cols          =  Math.round(width / fontWidth)
   ;
+
+// require('aceworker');
+require('acemode');
+require('acetheme');
 
 var term = require('hypernal')(cols, rows);
 term.appendTo(terminal);

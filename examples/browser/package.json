@@ -14,7 +14,9 @@
   "dependencies": {
     "browserify": "~2.11.0",
     "hypernal": "~0.1.0",
-    "debounce": "0.0.2"
+    "debounce": "0.0.2",
+    "browserify-shim": "~2.0.3",
+    "brfs": "0.0.4"
   },
   "devDependencies": {
     "ecstatic": "~0.4.2",
