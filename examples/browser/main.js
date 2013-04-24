@@ -6,7 +6,7 @@ var scriptieTalkie =  require('../../')
   , debounce       =  require('debounce')
   , query          =  require('./query')
   , getStyle       =  require('./get-style')
-  , ace            =  require('ace')
+  , ace            =  require('brace')
   , codeLink       =  document.getElementById('code-link')
   , codeTweet      =  document.getElementById('code-tweet')
   , root           =  getRoot()
@@ -74,12 +74,12 @@ var terminal      =  document.getElementById('terminal')
   , cols          =  Math.round(width / fontWidth)
   ;
 
-// require('aceworker');
-require('acemode');
-require('acetheme');
 
 var term = require('hypernal')(cols, rows);
 term.appendTo(terminal);
+
+require('brace/mode/javascript');
+require('brace/theme/monokai');
 
 var editor = ace.edit("editor");
 editor.setTheme("ace/theme/monokai");

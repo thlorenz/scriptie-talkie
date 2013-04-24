@@ -6,12 +6,7 @@ var browserify =  require('browserify')
 
 
 var bundle = module.exports = function () {
-  var bundle = shim(browserify(), {
-       ace       :  { path :  require.resolve('./ace/ace')               ,  exports: 'ace' }
-    ,  acemode   :  { path :  require.resolve('./ace/mode-javascript')   ,  exports: null }
-    ,  acetheme  :  { path :  require.resolve('./ace/theme-monokai')     ,  exports: null }
-    })
-    .transform('brfs')
+  var bundle = browserify() 
     .require(require.resolve('./main'), { entry: true })
     .bundle({ debug: true });
 
