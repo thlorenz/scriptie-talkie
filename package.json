@@ -49,30 +49,14 @@
   "testling": {
     "preprocess": "node test/browser/build.js",
     "html": "test/browser/index.html",
-    "browsers": {
-      "ie": [
-        8,
-        9,
-        10
-      ],
-      "ff": [
-        10,
-        14,
-        15,
-        "nightly"
-      ],
-      "chrome": [
-        10,
-        25,
-        26,
-        "canary"
-      ],
-      "safari": [
-        5.1
-      ],
-      "opera": [
-        12
-      ]
-    }
+    "browsers": [
+      "ie/6..latest",
+      "firefox/3..5", "firefox/19..nightly",
+      "chrome/4..7", "chrome/24..canary",
+      "opera/10..next",
+      "safari/4..latest",
+      "iphone/6",
+      "ipad/6"
+    ]
   }
 }
