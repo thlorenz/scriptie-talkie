@@ -21,10 +21,12 @@ function evaluateScript() {
     scriptieTalkie(script)
       .forEach(function (line) { term.writeln(line); });
   } catch (e) {
-    console.log(e.stack);
-    console.error(e.toString());
+    if (window.stdebug === true) {
+      console.log(e.stack);
+      console.error(e.toString());
+    }
     if (e instanceof ReferenceError && /Trying to access object from destroyed plug-in/.test(e.message)) {
-      var msg = 'Looks like your iPad Safari browser doesn\'t like what scriptie talkie is doing.\n'
+      var msg = 'Looks like your iPad/iPod/iPhone Safari browser doesn\'t like what scriptie talkie is doing.\n'
               + 'Please try another device and/or browser, i.e. chrome works everywhere, even on iPad.';
       term.writeln(msg);
     }
