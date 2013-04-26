@@ -1,7 +1,6 @@
 'use strict';
 /*jshint browser: true */
 
-
 var scriptieTalkie =  require('../../')
   , debounce       =  require('debounce')
   , query          =  require('./query')
