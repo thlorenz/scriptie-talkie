@@ -1,6 +1,6 @@
 {
   "name": "scriptie-talkie",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "description": "Makes your code tell you what the intermediate results are when executing a script.",
   "main": "scriptie-talkie.js",
   "directories": {
@@ -51,8 +51,10 @@
     "html": "test/browser/index.html",
     "browsers": [
       "ie/6..latest",
-      "firefox/3..5", "firefox/19..nightly",
-      "chrome/4..7", "chrome/24..canary",
+      "firefox/3..5",
+      "firefox/19..nightly",
+      "chrome/4..7",
+      "chrome/24..canary",
       "opera/10..next",
       "safari/4..latest",
       "iphone/6",
