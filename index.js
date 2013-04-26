@@ -13,7 +13,7 @@ function highlightLines(script) {
 }
 
 /**
- * Evaluates all snippets in the given script and calls opts.write with the result.
+ * Evaluates all snippets in the given script and calls opts.writeln with each line of the result.
  * 
  * @name exports
  * @function
@@ -23,10 +23,11 @@ function highlightLines(script) {
  *    toLines: function(code:String) -> [String] - to split script into lines -- uses cardinal syntax highlighter by default
  *    write  : function(result:String) - to be called to write the result -- default console.log
  *    diff   : { joinLinesAt: at what point is diff compacted to one line      
- *             , maxLineLength: at which length is a diff line cut of with an ellipsis
+ *             , maxLineLength: at which length is a diff line cut off with an ellipsis
  *             }
+ * @return {Array[String]} The result split into lines.
  */
-module.exports = function (script, scriptPath, opts) {
+var talk = module.exports = function (script, scriptPath, opts) {
   opts = opts || {};
   var toLines =  opts.toLines || highlightLines
     , writeln =  opts.writeln || (process.browser === true ? function () {} : console.log.bind(console));

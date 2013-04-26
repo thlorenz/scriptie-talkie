@@ -3,7 +3,8 @@
 
 +function () {
 
-if (!process.browser) return module.exports = function (s) { process.stdout.write(s + '\n'); };
+if (!process.browser) 
+  return module.exports = function (s) { process.stdout.write(s + '\n'); };
 
 var terminal = document.createElement('div');
 document.body.appendChild(terminal);
