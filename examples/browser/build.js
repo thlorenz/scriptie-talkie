@@ -1,5 +1,4 @@
 var browserify =  require('browserify')
-  , shim       =  require('browserify-shim')
   , path       =  require('path')
   , fs         =  require('fs')
   , aceroot    =  path.join(__dirname, 'ace');
