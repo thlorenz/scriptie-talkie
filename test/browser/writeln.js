@@ -9,7 +9,7 @@ if (!process.browser)
 var terminal = document.createElement('div');
 document.body.appendChild(terminal);
 
-var term = require('hypernal')(80, 80);
+var term = require('hypernal')();
 term.appendTo(terminal);
 module.exports = term.writeln.bind(term);
 }();
