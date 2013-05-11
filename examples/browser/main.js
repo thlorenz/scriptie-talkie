@@ -66,18 +66,9 @@ function initScript() {
   updateLinkAndTweet(code);
 }
 
-var terminal      =  document.getElementById('terminal')
-  , testFontWidth =  document.getElementById('test-font-width').clientWidth + 1
-  , fontSize      =  parseInt(getStyle(terminal, 'font-size'), 10)
-  , fontWidth     =  Math.round(testFontWidth / (26 * 2))
-  , height        =  terminal.clientHeight
-  , width         =  terminal.clientWidth
-  , rows          =  Math.round(height / (fontSize + 6))
-  , cols          =  Math.round(width / fontWidth)
-  ;
+var terminal =  document.getElementById('terminal')
+  , term     =  require('hypernal')();
 
-
-var term = require('hypernal')(cols, rows);
 term.appendTo(terminal);
 
 require('brace/mode/javascript');

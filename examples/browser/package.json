@@ -13,10 +13,10 @@
   "homepage": "https://github.com/thlorenz/browser",
   "dependencies": {
     "browserify": "~2.11.0",
-    "hypernal": "~0.1.0",
     "debounce": "0.0.2",
     "brfs": "0.0.4",
-    "brace": "~0.1.2"
+    "brace": "~0.1.2",
+    "hypernal": "~0.2.2"
   },
   "devDependencies": {
     "ecstatic": "~0.4.2",
