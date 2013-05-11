@@ -58,7 +58,14 @@ function updateLinkAndTweet(code) {
 
 function initScript() {
   var parsed = query.parse();
-  var code = (parsed && parsed.code) || require('./default-sample');
+  var code = (parsed && parsed.code);
+
+  if (!code) {
+    code = require('./default-sample');
+    editor.once('focus', function () {
+      editor.setValue('');
+    });
+  }
 
   if (code.charAt(code.length - 1) === '/') code = code.substring(0, code.length - 1);
 
@@ -74,12 +81,16 @@ term.appendTo(terminal);
 require('brace/mode/javascript');
 require('brace/theme/monokai');
 
-var editor = ace.edit("editor");
+var editor = ace.edit("editor") 
+  , session = editor.getSession();
+
 editor.setTheme("ace/theme/monokai");
-editor.getSession().setMode("ace/mode/javascript");
+session.setMode("ace/mode/javascript");
 editor.$highlightActiveLine = false;
 
 initScript();
+
+editor.clearSelection();
 
 editor.on('change', debounce(evaluateScript, 400, false));
 evaluateScript();
