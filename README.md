@@ -24,9 +24,19 @@ b = b + a;
 
 ## Command Line Tool
 
+### scriptie-talkie a file
+
     scriptie-talkie path/to/script.js
 
 Prints the highlighted code of `script.js` with intermediate results.
+
+### piping into scriptie-talkie
+
+    curl https://raw.github.com/thlorenz/ansicolors/master/ansicolors.js | scriptie-talkie
+
+Prints the highlighted code of `ansicolors.js` with intermediate results.
+
+Note that in this case `require` statements cannot be resolved.
 
 ## API
 
