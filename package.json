@@ -15,10 +15,10 @@
     "require-like": "~0.1.2",
     "deep-is": "~0.1.0",
     "snippetify": "~0.2.0",
+    "through": "~2.2.7",
     "hypernal": "~0.2.2"
   },
   "devDependencies": {
-    "through": "~2.2.7",
     "tape": "~0.3.3",
     "tap": "~0.4.1",
     "brfs": "0.0.4",
