@@ -7,25 +7,24 @@
     "example": "examples"
   },
   "dependencies": {
-    "clone": "~0.1.5",
     "require-like": "~0.1.2",
-    "deep-is": "~0.1.0",
-    "snippetify": "~0.2.0",
-    "through": "~2.2.7",
-    "hypernal": "~0.2.2",
+    "snippetify": "~0.2.1",
     "ansicolors": "~0.2.1",
-    "cardinal": "~0.4.2",
+    "through": "~2.3.4",
+    "hypernal": "~0.2.7",
+    "clone": "~0.1.9",
+    "deep-is": "~0.1.2",
     "esprima": "~1.0.3",
-    "difflet": "~0.2.6"
+    "difflet": "~0.2.6",
+    "cardinal": "~0.4.2"
   },
   "devDependencies": {
-    "tap": "~0.4.1",
-    "brfs": "0.0.4",
-    "browserify": "~2.12.0",
     "ecstatic": "~0.4.2",
     "mold-source-map": "~0.2.0",
-    "hypernal": "~0.2.1",
-    "tape": "~1.0.4"
+    "tape": "~1.0.4",
+    "brfs": "0.0.6",
+    "tap": "~0.4.3",
+    "browserify": "~2.12.5"
   },
   "scripts": {
     "test": "tap test/*.js",
