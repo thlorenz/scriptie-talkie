@@ -17,10 +17,10 @@ test('\n# ensuring that NaN is not coerced to undefined\n', function (t) {
 
   t.deepEqual(
       lines
-    , [ '\u001b[90m1: \u001b[39m\u001b[32mvar\u001b[39m \u001b[37mx\u001b[39m \u001b[93m=\u001b[39m \u001b[34m1\u001b[39m \u001b[93m+\u001b[39m \u001b[90mundefined\u001b[39m \u001b[93m+\u001b[39m \u001b[34m1\u001b[39m\u001b[90m;\u001b[39m',
-        '\u001b[92m+\u001b[39m  x: \u001b[34m\u001b[1mNaN\u001b[0m\n',
-        '\u001b[90m2: \u001b[39m\u001b[94mtypeof\u001b[39m\u001b[90m(\u001b[39m\u001b[37mx\u001b[39m\u001b[90m)\u001b[39m\u001b[90m;\u001b[39m',
-        '\u001b[36m=>\u001b[39m \u001b[34m\u001b[1m"number"\u001b[0m\n' ]
+    , ["\u001b[90m1: \u001b[32mvar\u001b[39m \u001b[37mx\u001b[39m \u001b[93m=\u001b[39m \u001b[34m1\u001b[39m \u001b[93m+\u001b[39m \u001b[90mundefined\u001b[39m \u001b[93m+\u001b[39m \u001b[34m1\u001b[39m\u001b[90m;\u001b[39m"
+      ,"\u001b[92m+\u001b[39m  x: \u001b[34m\u001b[1mNaN\u001b[0m\n"
+      ,"\u001b[90m2: \u001b[94mtypeof\u001b[39m\u001b[90m(\u001b[39m\u001b[37mx\u001b[39m\u001b[90m)\u001b[39m\u001b[90m;\u001b[39m"
+      ,"\u001b[36m=>\u001b[39m \u001b[34m\u001b[1m\"number\"\u001b[0m\n"]
     , 'shows intermediate results'
   )
   t.end()

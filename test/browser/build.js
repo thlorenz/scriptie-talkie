@@ -25,7 +25,7 @@ function allTests() {
       .filter(function (file) { 
         return path.extname(file) === '.js' 
       });
-  return jsfiles.map(path.resolve.bind(null, __dirname, '..'))
+  return jsfiles.map(function (f) { return path.resolve( __dirname, '..', f); });
 }
 
 if (!module.parent) {
